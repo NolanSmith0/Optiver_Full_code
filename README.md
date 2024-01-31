@@ -27,7 +27,7 @@ Within each part, i will explain how i managed to get the results.
 
 ## Feature enigineering
 
-About feature enigneering, I will explain my features one by one, but before all of this, you can check my EDA notebook and data part of the competition to have a basic of understanding of the dataset and its columns:
+About feature enigneering, I will explain my features one by one, but before all of this, you can check my EDA notebook and data part of the competition to have a basic understanding of the dataset and its columns:
 
 - [My notebook for EDA](https://www.kaggle.com/code/nolansmith/eda-part1-missing-values)
 
@@ -89,7 +89,7 @@ def imbalance_features(df):
 
 - Second are price combinations, these features came from community, I don't know if these features have any economics meaning, but they do help imporve the model.
 
-- Then is the replication of the target. Optiver only said that they build a market index and use the following formula to calculate the target: $Target = (StockWAP_{t+60} / StockWAP_{t} - IndexWAP_{t+60} / IndexWAP_{t})*10000$     StockWAP is given as the wap column in the data, IndexWAP is unknown but since target is known in training set, we can calculate the market index. Then, to reproduce the market index in testing set, i first use a simple average of 200 stocks within each second to represent the index, they are actually pretty close. Then i thought, IndexWAP mayby just a linear combination of the stocks wap, so i run a linear regression and $R^2$ is 0.99. The weights of each stock is stored in the variable ```weights```, so the feature ```df['market_index']``` is just the market index mentioned in the building of target.
+- Then is the replication of the target. Optiver only said that they build a market index and use the following formula to calculate the target: $Target = (StockWAP_{t+60} / StockWAP_{t} - IndexWAP_{t+60} / IndexWAP_{t})*10000$     StockWAP is given as the wap column in the data, IndexWAP is unknown but since target is known in training set, we can calculate the market index. Then, to reproduce the market index in testing set, i first use a simple average of 200 stocks within each second to represent the index, they are actually pretty close. Then i thought, IndexWAP maybe just a linear combination of the stocks wap, so i run a linear regression and $R^2$ is 0.99. The weights of each stock is stored in the variable ```weights```, so the feature ```df['market_index']``` is just the market index mentioned in the building of target.
 
 - After getting the market index, i want to build the target. Of course, I can't built now's target since it requires 60s later's market index and wap. But i can build 60s ago's target using current market index and wap. And this is the feature ```df['lag_target']```. I also build the feature ```df['market_volatility_contribution']``` to represent the market volatility contribution of each stock. It turns out that this feature works really good.
 
