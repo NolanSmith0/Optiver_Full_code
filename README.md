@@ -1,15 +1,15 @@
 # Optiver_Full_code
 > This Repo is used as supplementary material for Jiahe Wang's MFE and MQF application
 
-My code for Optiver's competition is the file ```LgbmTheBest```. LightGBM is the best haha.
+**Update 3/29/2024** : I found my final ranking is 195/4436 Top5% and got a silver medal. I will add more details of the cross validation and feature selection results, I was too busy with my RA and Intern work but now I have time to give all the details of my code.
+
+My code for Optiver's competition is the file ```LgbmTheBest.ipynb```. LightGBM is the best haha.
 
 An overview:
 
----
+This is my code that achieves 5.3343 on the public leaderboard in the competition [Optiver - Trading at the Close, Predict US stocks closing movements](https://www.kaggle.com/competitions/optiver-trading-at-the-close). The final result is 5.4718 or rank 195/4436 Top5% using three months market data after submission deadline.
 
-> This notebook is for Jiahe Wang MFE applications. All contents are written by myself. 2024.1.11
-
-This is my code that achieves 5.3343 on the leaderboard.
+![My ranking](./competition_result.png)
 
 Full code is a combination of community works and my own modification of the feature enigneering part.
 
