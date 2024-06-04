@@ -1,5 +1,5 @@
 # Optiver_Full_code
-> This Repo is used as supplementary material for Jiahe Wang's MFE and MQF application
+> This Repo is used as supplementary material for Jiahe Wang's job application
 
 **Update 3/29/2024** : I found my final ranking is 195/4436 Top5% and got a silver medal. I will add more details of the cross validation and feature selection results, I was too busy with my RA and Intern work but now I have time to give all the details of my code.
 
